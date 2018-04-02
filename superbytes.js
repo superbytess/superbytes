@@ -9,24 +9,53 @@
  *
  */
 
-// input: bytes - integer in bytes,
-//        si - true or false (default is false)
-//             false (default) - traditional system of units (1024)
-//             true - International System of Units
-//        digits - (default 2) The number of digits to appear after the decimal point
-const superbytes = (bytes, digits, si) => {
+// Usage:
+// bytes : number value in bytes
+// arg1 : SI metric system or traditional (true or false, default is false traditional 1024^n)
+// arg2 : decimal number after point (default is 2)
+// You can use arg1 and arg2 interchangeably
+//
+// try it:
+// console.log(superbytes(123456));
+// console.log(superbytes(123456, true));
+// console.log(superbytes(123456, true, 3));
+// console.log(superbytes(123456, 0, true));
+const superbytes = (bytes, arg1, arg2) => {
    'use strict';
+
    const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
    bytes = Math.abs(bytes);
-   let divider = 0;
-   // defaul si is traditional, change to true
-   if(si === undefined) si = false;
-   // default is round to 2 after the decimal
-   if(digits === undefined) digits = 2;
+   let divider,
+       si,
+       digits = 0;
 
-   if(si === true) {
-     divider = 1000;
-   } else { divider = 1024; }
+   if((arg1 === undefined) && (arg2 === undefined)) {
+     divider = 1024;
+     digits = 2;
+   }
+   if(typeof arg1 === 'boolean') {
+     if(arg1) {
+       divider = 1000;
+     } else {
+       divider = 1024;
+     }
+     if(typeof arg2 === 'number') {
+       digits = arg2;
+     } else {
+       digits = 2;
+     }
+   } else if(typeof arg1 === 'number') {
+     digits = arg1;
+     if(typeof arg2 === 'boolean') {
+       if(arg2) {
+         divider = 1000;
+       } else {
+         divider = 1024;
+       }
+     } else {
+       divider = 1024;
+     }
+   }
 
    if(Number.isFinite(bytes)) {
      if(bytes < divider) {
@@ -41,4 +70,4 @@ const superbytes = (bytes, digits, si) => {
        }
      }
    }
- }
+ };
