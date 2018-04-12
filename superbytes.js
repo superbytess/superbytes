@@ -20,7 +20,7 @@
 // console.log(superbytes(123456, true));
 // console.log(superbytes(123456, true, 3));
 // console.log(superbytes(123456, 0, true));
-const superbytes = (bytes, arg1, arg2) => {
+module.exports = superbytes = (bytes, arg1, arg2) => {
    'use strict';
 
    const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
