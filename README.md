@@ -6,6 +6,8 @@ The tool converts bytes into other units in a friendly way. You can specify the 
 ## Usage
 
 ```js
+const superbytes = require('superbytes.js');
+
 superbytes(934);
 // returns '934 B'
 superbytes(243212);

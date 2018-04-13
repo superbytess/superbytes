@@ -9,17 +9,12 @@
  *
  */
 
-// Usage:
+// Usage: superbytes(bytes, arg1, arg2)
 // bytes : number value in bytes
 // arg1 : SI metric system or traditional (true or false, default is false traditional 1024^n)
 // arg2 : decimal number after point (default is 2)
 // You can use arg1 and arg2 interchangeably
-//
-// try it:
-// console.log(superbytes(123456));
-// console.log(superbytes(123456, true));
-// console.log(superbytes(123456, true, 3));
-// console.log(superbytes(123456, 0, true));
+
 module.exports = superbytes = (bytes, arg1, arg2) => {
    'use strict';
 
