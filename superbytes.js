@@ -1,6 +1,6 @@
 /*
- * superbytes.js
- * https://github.com/damianpolak/superbytes.js
+ * superbytes
+ * https://github.com/damianpolak/superbytes
  *
  * Copyright 2018, Damian Polak
  *
