@@ -4,7 +4,10 @@
   "description": "Convert bytes to a human readable string format",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0"
   },
   "repository": {
     "type": "git",
