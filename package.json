@@ -1,0 +1,36 @@
+{
+  "name": "superbytes",
+  "version": "1.0.0",
+  "description": "Convert bytes to a human readable string format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianpolak/superbytes.git"
+  },
+  "keywords": [
+    "super",
+    "bytes",
+    "byte",
+    "convert",
+    "conversion",
+    "file",
+    "filesize",
+    "size",
+    "human",
+    "readable",
+    "format",
+    "si"
+  ],
+  "author": {
+		"name": "Damian Polak",
+		"email": "deeppurple044@gmail.com"
+	},
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damianpolak/superbytes/issues"
+  },
+  "homepage": "https://github.com/damianpolak/superbytes#readme"
+}
