@@ -4,6 +4,12 @@
 
 The tool converts bytes into other units in a friendly way. You can specify the number after the decimal point and rounding. Superbytes by default converts bytes in the traditional way (1024bytes = 1 KB), but you can also select the International System of Units (1000 bytes = 1 kB).
 
+## Install
+
+```
+$ npm install superbytes
+```
+
 ## Usage
 
 ```js
