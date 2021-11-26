@@ -19,6 +19,8 @@ module.exports = superbytes = (bytes, arg1, arg2) => {
    'use strict';
 
    const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+   const UNITS2 = ['kB'];
+
    bytes = Math.abs(bytes);
    let divider,
        si,
@@ -26,13 +28,16 @@ module.exports = superbytes = (bytes, arg1, arg2) => {
 
    if((arg1 === undefined) && (arg2 === undefined)) {
      divider = 1024;
+     si = false;
      digits = 2;
    }
    if(typeof arg1 === 'boolean') {
      if(arg1) {
        divider = 1000;
+       si = true;
      } else {
        divider = 1024;
+       si = false;
      }
      if(typeof arg2 === 'number') {
        digits = arg2;
@@ -44,11 +49,14 @@ module.exports = superbytes = (bytes, arg1, arg2) => {
      if(typeof arg2 === 'boolean') {
        if(arg2) {
          divider = 1000;
+         si = true;
        } else {
          divider = 1024;
+         si = false
        }
      } else {
        divider = 1024;
+       si = false;
      }
    }
 
@@ -61,7 +69,17 @@ module.exports = superbytes = (bytes, arg1, arg2) => {
      for(let i = 1; i <= 8; i++) {
        if(bytes >= Math.pow(divider, i) && bytes < Math.pow(divider, i+1)) {
          let num = (bytes/Math.pow(divider, i)).toFixed(digits);
-         return `${num} ${UNITS[i]}`;
+         if(si == false) {
+          return `${num} ${UNITS[i]}`;
+         }
+         console.log(`I: ${i}`);
+         if(si == true && i < 2) {
+          return `${num} ${UNITS2[0]}`;
+         }
+
+         if(si == true && i >= 2) {
+          return `${num} ${UNITS[i]}`;
+         }
        }
      }
    }
