@@ -33,9 +33,12 @@ superbytes(1234500, 0);
 // returns '1 MB'
 
 superbytes(1234500, 2, true);
-// returns '1.23 MB' <-- SI way
+// returns '1.23 MB' <--  International System of Units (SI) 
+// Base 10 (1000 bytes) - just use 'true' argument
+
 superbytes(1234500, 2);
-// returns '1.18 MB' <-- traditional way (1024^n)
+// returns '1.18 MB' <-- Traditional way (1024^n)
+// Base 2 (1024 bytes)
 ```
 
 ## License
