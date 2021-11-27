@@ -1,4 +1,4 @@
-# superbytes https://circleci.com/gh/damianpolak/superbytes
+# superbytes [![damianpolak](https://circleci.com/gh/damianpolak/superbytes.svg?style=svg)](https://circleci.com/gh/damianpolak/superbytes)
 
 > Convert bytes to a human readable string format
 
