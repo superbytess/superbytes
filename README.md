@@ -1,4 +1,4 @@
-# superbytes [![Build Status](https://travis-ci.org/damianpolak/superbytes.svg?branch=master)](https://travis-ci.org/damianpolak/superbytes)
+# superbytes [![damianpolak](https://circleci.com/gh/damianpolak/superbytes.svg?style=svg)](https://circleci.com/gh/damianpolak/superbytes)
 
 > Convert bytes to a human readable string format
 
