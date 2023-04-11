@@ -1,6 +1,6 @@
 {
   "name": "superbytes",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Convert bytes to a human readable string format",
   "main": "index.js",
   "scripts": {
