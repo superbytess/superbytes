@@ -42,4 +42,6 @@ test('converts bytes to human readable string format', (t) => {
   t.is(superbytes(453527161, { metric: 'iec', digits: 3}), '432.517 MiB');
   t.is(superbytes(453527161, { metric: 'iec', digits: 4}), '432.5172 MiB');
   t.is(superbytes(453527161, { metric: 'iec', digits: 0}), '433 MiB');
+
+  t.is(superbytes(453527161, { digits: 3}), '432.517 MiB');
 });

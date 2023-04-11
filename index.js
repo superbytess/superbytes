@@ -7,9 +7,7 @@
  * Licensed under the MIT license:
  * https://opensource.org/licenses/MIT
  * 
- */
-
-/**
+ * 
  * Usage: superbytes(bytes, arg) <-- default metric system is IEC and 2 decimal place
  *        superbytes(43211, { metric: 'iec'})
  *        superbytes(43211, { metric: 'si'})
@@ -92,6 +90,8 @@ module.exports = superbytes = (bytes, arg1, arg2) => {
 
   const objectArgs = () => {
     const argKeys = Object.keys(arg1);
+    params.default();
+
     if(argKeys.length > 0) {
       argKeys.forEach(i => {
         if(!objArg.keys.includes(i)) {
