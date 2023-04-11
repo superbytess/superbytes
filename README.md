@@ -1,44 +1,40 @@
-# superbytes [![damianpolak](https://circleci.com/gh/damianpolak/superbytes.svg?style=svg)](https://circleci.com/gh/damianpolak/superbytes)
+# superbytes [![damianpolak](https://circleci.com/gh/damianpolak/superbytes.svg?style=shield)](https://circleci.com/gh/damianpolak/superbytes) ![npm](https://img.shields.io/npm/dm/superbytes)
 
 > Convert bytes to a human readable string format
 
-The tool converts bytes into other units in a friendly way. You can specify the number after the decimal point and rounding. Superbytes by default converts bytes in the traditional way (1024bytes = 1 KB), but you can also select the International System of Units (1000 bytes = 1 kB).
+The tool converts bytes into other units in a friendly way. You can specify the number after the decimal point and rounding. Superbytes by default converts bytes in the traditional way IEC: 1024bytes = 1 KiB, but you can also use SI system (1000 bytes = 1 kB).
 
 ## Install
 
 ```
 $ npm install superbytes
 ```
-
 ## Usage
 
 ```js
 const superbytes = require('superbytes');
 
-superbytes(934);
-// returns '934 B'
-superbytes(243212);
-// returns '237.51 KB'
-superbytes(1234500);
-// returns '1.18 MB'
-superbytes(52364562347);
-// returns '48.77 GB'
-superbytes(1234500, 3);
-// returns '1.177 MB'
-superbytes(1234500, 4);
-// returns '1.1773 MB'
-superbytes(1234500, 5);
-// returns '1.17731 MB'
-superbytes(1234500, 0);
-// returns '1 MB'
+superbytes(423551030, 0);
+// returns '404 MiB'
+superbytes(423551030);
+// returns '403.93 MiB'
+superbytes(423551030, 3);
+// returns '403.930 MiB'
+superbytes(423551030, true);
+// returns '423.55 MB'
+superbytes(423551030, true, 3);
+// returns '423.551 MB'
+superbytes(72355103011, { metric: 'si'});
+// returns '72.36 GB'
+superbytes(423551030, { metric: 'iec'});
+// returns '403.93 MiB'
+superbytes(123456, { metric: 'si', digits: '5'});
+// returns '123.45600 kB'
+superbytes(123456, { metric: 'iec', digits: '3'});
+// returns '120.563 KiB'
+superbytes(123456, { digits: 5 });
+// returns '120.56250 KiB'
 
-superbytes(1234500, 2, true);
-// returns '1.23 MB' <--  International System of Units (SI) 
-// Base 10 (1000 bytes) - just use 'true' argument
-
-superbytes(1234500, 2);
-// returns '1.18 MB' <-- Traditional way (1024^n)
-// Base 2 (1024 bytes)
 ```
 
 ## License
