@@ -5,7 +5,7 @@ import {
   SuperBytesArgDefinition,
   SuperBytesOptions,
 } from '../types/superbytes-types';
-import { converter } from './superbytes2-extension';
+import { converter } from './converter-extension';
 
 export const superbytes = <T extends SuperBytesArg | SuperBytesOptions, K extends SuperBytesArg>(
   value: number,

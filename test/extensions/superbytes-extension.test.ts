@@ -1,6 +1,6 @@
 import { superbytes } from '../../src/index';
 
-describe('Superbytes main module function', () => {
+describe('Superbytes legacy module', () => {
   describe('Legacy args', () => {
     test('Only bytes', () => {
       expect(superbytes(0)).toBe('0 B');

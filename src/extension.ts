@@ -1,4 +1,4 @@
-import { converter } from './extensions/superbytes2-extension';
+import { converter } from './extensions/converter-extension';
 import { superbytes } from './extensions/superbytes-extension';
 import { ConverterConstructorOptions, IConverter } from './types/converter-types';
 import { Extension } from './types/extension-types';
