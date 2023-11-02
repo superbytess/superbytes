@@ -7,10 +7,10 @@ import {
 } from '../types/superbytes-types';
 
 abstract class Args {
-  protected _arg1!: SuperBytesArg | SuperBytesOptions;
+  protected _arg1!: SuperBytesArg | Partial<SuperBytesOptions>;
   protected _arg2!: SuperBytesArg;
 
-  constructor(arg1?: SuperBytesArg | SuperBytesOptions, arg2?: SuperBytesArg) {
+  constructor(arg1?: SuperBytesArg | Partial<SuperBytesOptions>, arg2?: SuperBytesArg) {
     this._arg1 = arg1;
     this._arg2 = arg2;
   }
@@ -135,6 +135,7 @@ class ObjectArgs extends Args {
 
         universalArgsObject.divider = pickedSystemAndDivider.divider;
         universalArgsObject.units = pickedSystemAndDivider.units;
+        universalArgsObject.metric = pickedSystemAndDivider.metric;
       }
 
       if (item === 'digits') {

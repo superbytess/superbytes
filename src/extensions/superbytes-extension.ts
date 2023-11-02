@@ -1,5 +1,4 @@
 import { ArgsFacade } from '../args/args';
-// import { ConverterHelper } from '../helpers/converter-helper.helper';
 import {
   SuperBytesArg,
   SuperBytesArgDefinition,
@@ -7,7 +6,10 @@ import {
 } from '../types/superbytes-types';
 import { converter } from './converter-extension';
 
-export const superbytes = <T extends SuperBytesArg | SuperBytesOptions, K extends SuperBytesArg>(
+export const superbytes = <
+  T extends SuperBytesArg | Partial<SuperBytesOptions>,
+  K extends SuperBytesArg,
+>(
   value: number,
   arg1?: T,
   arg2?: K

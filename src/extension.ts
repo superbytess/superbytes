@@ -7,7 +7,7 @@ import { SuperBytesArg, SuperBytesOptions } from './types/superbytes-types';
 export class ExtensionFactory implements Extension {
   superbytes(
     value: number,
-    arg1?: SuperBytesArg | SuperBytesOptions,
+    arg1?: SuperBytesArg | Partial<SuperBytesOptions>,
     arg2?: SuperBytesArg
   ): string {
     return superbytes(value, arg1, arg2);
