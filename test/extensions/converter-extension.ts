@@ -1,3 +1,0 @@
-// describe('Converter extension tests', () => {
-
-// });
