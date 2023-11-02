@@ -11,7 +11,7 @@ export class Converter implements IConverter {
     private value: number,
     private fromUnit?: Units<UnitScaleKey>,
     private toUnit?: Units<UnitScaleKey>,
-    private metric?: UnitScaleKey, // private precision: number = 2
+    private metric?: UnitScaleKey,
     private precision: number = 2
   ) {
     return this;
@@ -34,7 +34,9 @@ export class Converter implements IConverter {
   toString(): string {
     const firstUnit = unitScale[Object.keys(unitScale)[0] as UnitScaleKey].units[0];
     const result = this.convertToUnit(this.value, this.sourceUnit, this.targetUnit);
-    return `${result.value.toFixed(result.unit == firstUnit ? 0 : this.precision)} ${result.unit}`;
+    return `${
+      result.unit == firstUnit ? result.value.toString() : result.value.toFixed(this.precision)
+    } ${result.unit}`;
   }
 
   valueOf(): number {
