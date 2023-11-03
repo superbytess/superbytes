@@ -66,7 +66,7 @@ export class Converter implements IConverter {
   protected findUnitBySymbol<TMetric extends UnitScaleKey>(
     unitSymbol: Units<TMetric>
   ): { index: number; metrics: ReadonlyArray<UnitScaleKey> } {
-    if (unitSymbol === 'B') return { index: 0, metrics: ['SI', 'IEC'] };
+    if (unitSymbol === 'B') return { index: 0, metrics: ['IEC', 'SI'] };
     for (const metric of Object.keys(unitScale) as UnitScaleKey[]) {
       const index = (unitScale[metric].units as ReadonlyArray<Units<typeof metric>>).indexOf(
         unitSymbol
