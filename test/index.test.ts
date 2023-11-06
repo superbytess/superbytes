@@ -1,6 +1,6 @@
-import { superbytes } from '../../src/index';
+import { superbytes } from '../src/main';
 
-describe('Superbytes extension', () => {
+describe('Superbytes general', () => {
   describe('Legacy args', () => {
     test('Only bytes', () => {
       expect(superbytes(0)).toBe('0 B');
@@ -51,20 +51,20 @@ describe('Superbytes extension', () => {
 
   describe('Object args', () => {
     test('Bytes + metric', () => {
-      expect(superbytes(1024, { metric: 'IEC' })).toBe('1.00 KiB');
-      expect(superbytes(453567, { metric: 'IEC' })).toBe('442.94 KiB');
-      expect(superbytes(5535671, { metric: 'IEC' })).toBe('5.28 MiB');
-      expect(superbytes(5535671, { metric: 'IEC', digits: 0 })).toBe('5 MiB');
-      expect(superbytes(453527161, { metric: 'IEC', digits: 3 })).toBe('432.517 MiB');
-      expect(superbytes(453527161, { metric: 'IEC', digits: 4 })).toBe('432.5172 MiB');
-      expect(superbytes(453527161, { metric: 'IEC', digits: 0 })).toBe('433 MiB');
-      expect(superbytes(1024, { metric: 'SI' })).toBe('1.02 kB');
-      expect(superbytes(453567, { metric: 'SI' })).toBe('453.57 kB');
-      expect(superbytes(5535671, { metric: 'SI' })).toBe('5.54 MB');
-      expect(superbytes(5535671, { metric: 'SI', digits: 0 })).toBe('6 MB');
-      expect(superbytes(453527161, { metric: 'SI', digits: 3 })).toBe('453.527 MB');
-      expect(superbytes(453527161, { metric: 'SI', digits: 4 })).toBe('453.5272 MB');
-      expect(superbytes(453527161, { metric: 'SI', digits: 0 })).toBe('454 MB');
+      expect(superbytes(1024, { metric: 'iec' })).toBe('1.00 KiB');
+      expect(superbytes(453567, { metric: 'iec' })).toBe('442.94 KiB');
+      expect(superbytes(5535671, { metric: 'iec' })).toBe('5.28 MiB');
+      expect(superbytes(5535671, { metric: 'iec', digits: 0 })).toBe('5 MiB');
+      expect(superbytes(453527161, { metric: 'iec', digits: 3 })).toBe('432.517 MiB');
+      expect(superbytes(453527161, { metric: 'iec', digits: 4 })).toBe('432.5172 MiB');
+      expect(superbytes(453527161, { metric: 'iec', digits: 0 })).toBe('433 MiB');
+      expect(superbytes(1024, { metric: 'si' })).toBe('1.02 kB');
+      expect(superbytes(453567, { metric: 'si' })).toBe('453.57 kB');
+      expect(superbytes(5535671, { metric: 'si' })).toBe('5.54 MB');
+      expect(superbytes(5535671, { metric: 'si', digits: 0 })).toBe('6 MB');
+      expect(superbytes(453527161, { metric: 'si', digits: 3 })).toBe('453.527 MB');
+      expect(superbytes(453527161, { metric: 'si', digits: 4 })).toBe('453.5272 MB');
+      expect(superbytes(453527161, { metric: 'si', digits: 0 })).toBe('454 MB');
     });
 
     test('Bytes + digits', () => {
@@ -77,13 +77,13 @@ describe('Superbytes extension', () => {
     });
 
     test('Bytes + metric + digits', () => {
-      expect(superbytes(987102, { metric: 'SI', digits: 2 })).toBe('987.10 kB');
-      expect(superbytes(987102, { metric: 'IEC', digits: 5 })).toBe('963.96680 KiB');
-      expect(superbytes(456788900, { metric: 'SI', digits: 3 })).toBe('456.789 MB');
-      expect(superbytes(456788900, { metric: 'SI', digits: 4 })).toBe('456.7889 MB');
-      expect(superbytes(456788900, { metric: 'IEC', digits: 3 })).toBe('435.628 MiB');
-      expect(superbytes(201188905, { metric: 'SI', digits: 2 })).toBe('201.19 MB');
-      expect(superbytes(201188905, { metric: 'IEC', digits: 7 })).toBe('191.8686914 MiB');
+      expect(superbytes(987102, { metric: 'si', digits: 2 })).toBe('987.10 kB');
+      expect(superbytes(987102, { metric: 'iec', digits: 5 })).toBe('963.96680 KiB');
+      expect(superbytes(456788900, { metric: 'si', digits: 3 })).toBe('456.789 MB');
+      expect(superbytes(456788900, { metric: 'si', digits: 4 })).toBe('456.7889 MB');
+      expect(superbytes(456788900, { metric: 'iec', digits: 3 })).toBe('435.628 MiB');
+      expect(superbytes(201188905, { metric: 'si', digits: 2 })).toBe('201.19 MB');
+      expect(superbytes(201188905, { metric: 'iec', digits: 7 })).toBe('191.8686914 MiB');
     });
   });
 });

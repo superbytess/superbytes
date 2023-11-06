@@ -1,14 +1,14 @@
 {
   "name": "superbytes",
-  "version": "2.0.0",
-  "description": "",
+  "version": "1.10.0",
+  "description": "Convert bytes to a human readable string format",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "umd:main": "dist/umd/index.js",
   "types": "dist/types/index.d.js",
   "scripts": {
-    "dev": "nodemon --config nodemon.json src/index.ts",
-    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts",
+    "start": "nodemon --config nodemon.json src/index.ts",
+    "start:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
@@ -22,10 +22,7 @@
     "test": "jest --no-cache --runInBand",
     "test:watch": "jest --no-cache --watchAll",
     "test:cov": "jest --coverage --no-cache --runInBand",
-    "addscope": "node tools/packagejson name @damianpolak/superbytes"
-  },
-  "publishConfig": {
-    "access": "public"
+    "addscope": "node tools/packagejson name @superbytess/superbytes"
   },
   "files": [
     "dist"
@@ -36,13 +33,13 @@
   ],
   "author": "Damian Polak <deeppurple044@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/damianpolak/superbytes",
+  "homepage": "https://github.com/superbytess/superbytes",
   "repository": {
     "type": "git",
-    "url": "git@github.com:damianpolak/superbytes.git"
+    "url": "git@github.com:superbytess/superbytes.git"
   },
   "bugs": {
-    "url": "https://github.com/damianpolak/superbytes/issues"
+    "url": "https://github.com/superbytess/superbytes/issues"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.0.0",

@@ -1,4 +1,4 @@
-# superbytes [![damianpolak](https://circleci.com/gh/damianpolak/superbytes.svg?style=shield)](https://circleci.com/gh/damianpolak/superbytes) ![npm](https://img.shields.io/npm/dm/superbytes)
+# superbytes ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/superbytess/superbytes) ![GitHub](https://img.shields.io/github/license/superbytess/superbytes) ![npm](https://img.shields.io/npm/dm/superbytes)
 
 > Convert bytes to a human readable string format
 
