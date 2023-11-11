@@ -4,7 +4,10 @@
 </p>
 <br>
 
-![npm](https://img.shields.io/npm/dw/superbytes) ![npm](https://img.shields.io/npm/v/superbytes) ![NPM](https://img.shields.io/npm/l/superbytes)
+![npm](https://img.shields.io/npm/dw/superbytes) ![npm](https://img.shields.io/npm/v/superbytes) ![NPM](https://img.shields.io/npm/l/superbytes) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/superbytess/superbytes/node.js.yml)
+![GitHub contributors](https://img.shields.io/github/contributors/superbytess/superbytes)
+
+
 
 ## Description
 Superbytes will help you convert bytes into other units understandable for humans. The library automatically converts bytes and returns a string with the most optimal unit representation. The library also allows you to set the precision of numbers following the decimal point and choose the output metric in the form of either the IEC standard (1024 bytes = 1 kibibyte) or SI (1000 bytes = 1 kilobyte).
