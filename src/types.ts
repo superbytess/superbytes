@@ -1,7 +1,7 @@
 export const iecUnits = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
 export const siUnits = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 export const objectArgs = {
-  keys: ['metric', 'digits', 'type'],
+  keys: ['metric', 'digits', 'type', 'precision'],
   metric: ['iec', 'si'],
   map: {
     si: true,
@@ -19,12 +19,13 @@ export type Metric = 'iec' | 'si';
 export type ArgDefinition = {
   divider: number;
   system: string[];
-  digits: number;
+  precision: number;
 };
 
 export type ArgObject = {
   metric?: Metric;
   digits?: number;
+  precision?: number;
 };
 
 export type ArgTypes = boolean | number | undefined;
@@ -32,11 +33,6 @@ export type ArgTypes = boolean | number | undefined;
 export interface Extension {
   name: string;
   run(): string;
-}
-
-export enum ExtensionType {
-  default = 'default',
-  convert = 'convert',
 }
 
 export interface Arg {

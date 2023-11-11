@@ -1,40 +1,59 @@
-# superbytes ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/superbytess/superbytes) ![GitHub](https://img.shields.io/github/license/superbytess/superbytes) ![npm](https://img.shields.io/npm/dm/superbytes)
+<h1 align="center">Superbytes</h1>
+<p align="center">
+  <b>Superbytes is a Node.js library for converting bytes to human readable string format</b>
+</p>
+<br>
 
-> Convert bytes to a human readable string format
+![npm](https://img.shields.io/npm/dw/superbytes) ![npm](https://img.shields.io/npm/v/superbytes) ![NPM](https://img.shields.io/npm/l/superbytes)
 
-The tool converts bytes into other units in a friendly way. You can specify the number after the decimal point and rounding. Superbytes by default converts bytes in the traditional way IEC: 1024bytes = 1 KiB, but you can also use SI system (1000 bytes = 1 kB).
+## Description
+Superbytes will help you convert bytes into other units understandable for humans. The library automatically converts bytes and returns a string with the most optimal unit representation. The library also allows you to set the precision of numbers following the decimal point and choose the output metric in the form of either the IEC standard (1024 bytes = 1 kibibyte) or SI (1000 bytes = 1 kilobyte).
 
-## Install
+By default superbytes converts to IEC units.
 
+The current version supports loading library using both CommonJS and ESModules.
+
+## Installation
+
+Latest version:
+```bash
+npm i superbytes@latest
 ```
-$ npm install superbytes
-```
+
 ## Usage
 
-```js
+### Loading using CommonJS
+
+```javascript
 const superbytes = require('superbytes');
 
-superbytes(423551030, 0);
-// returns '404 MiB'
 superbytes(423551030);
 // returns '403.93 MiB'
 superbytes(423551030, 3);
 // returns '403.930 MiB'
-superbytes(423551030, true);
-// returns '423.55 MB'
-superbytes(423551030, true, 3);
-// returns '423.551 MB'
 superbytes(72355103011, { metric: 'si'});
 // returns '72.36 GB'
-superbytes(423551030, { metric: 'iec'});
-// returns '403.93 MiB'
-superbytes(123456, { metric: 'si', digits: '5'});
-// returns '123.45600 kB'
-superbytes(123456, { metric: 'iec', digits: '3'});
-// returns '120.563 KiB'
-superbytes(123456, { digits: 5 });
-// returns '120.56250 KiB'
+superbytes(3123123, { precision: 5});
+// returns '2.97844 MiB'
+superbytes(912839123, { metric: 'si', precision: 5});
+// returns '912.83912 MB'
+```
 
+### Loading using ES modules
+
+```javascript
+import { superbytes } from 'superbytes';
+
+superbytes(423551030);
+// returns '403.93 MiB'
+superbytes(423551030, 3);
+// returns '403.930 MiB'
+superbytes(72355103011, { metric: 'si'});
+// returns '72.36 GB'
+superbytes(3123123, { precision: 5});
+// returns '2.97844 MiB'
+superbytes(912839123, { metric: 'si', precision: 5});
+// returns '912.83912 MB'
 ```
 
 ## License

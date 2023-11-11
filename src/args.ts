@@ -23,7 +23,7 @@ abstract class Args {
     return {
       divider: divider.iec,
       system: iecUnits,
-      digits: digits,
+      precision: digits,
     };
   }
 
@@ -33,9 +33,9 @@ abstract class Args {
       : { system: iecUnits, divider: divider.iec };
   }
 
-  protected getDigitsArgsByNumber(numberArg: number): Pick<ArgDefinition, 'digits'> {
+  protected getPrecisionArgsByNumber(numberArg: number): Pick<ArgDefinition, 'precision'> {
     return {
-      digits: typeof numberArg === 'number' && !Number.isNaN(numberArg) ? numberArg : 2,
+      precision: typeof numberArg === 'number' && !Number.isNaN(numberArg) ? numberArg : 2,
     };
   }
 }
@@ -66,7 +66,7 @@ class LegacyArgs extends Args implements Arg {
         this.addToPassedArgs(this.getSystemArgsByBoolean(inputArg as boolean));
         break;
       case 'number':
-        this.addToPassedArgs(this.getDigitsArgsByNumber(inputArg as number));
+        this.addToPassedArgs(this.getPrecisionArgsByNumber(inputArg as number));
         break;
     }
   }
@@ -126,7 +126,15 @@ class ObjectArgs extends Args implements Arg {
       }
 
       if (item === 'digits') {
-        universalArgsObject.digits = this.getDigitsArgsByNumber(arg.digits as number).digits;
+        universalArgsObject.precision = this.getPrecisionArgsByNumber(
+          arg.digits as number
+        ).precision;
+      }
+
+      if (item === 'precision') {
+        universalArgsObject.precision = this.getPrecisionArgsByNumber(
+          arg.precision as number
+        ).precision;
       }
     });
 

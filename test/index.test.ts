@@ -1,4 +1,4 @@
-import { superbytes } from '../src/main';
+import { superbytes } from '../src/index-mjs';
 
 describe('Superbytes general', () => {
   describe('Legacy args', () => {
