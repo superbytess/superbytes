@@ -28,7 +28,7 @@ npm i superbytes@latest
 ### Loading using CommonJS
 
 ```javascript
-const superbytes = require('superbytes');
+const { superbytes } = require('superbytes');
 
 superbytes(423551030);
 // returns '403.93 MiB'

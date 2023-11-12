@@ -1,40 +1,25 @@
 {
   "name": "superbytes",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Convert bytes to a human readable string format",
+  "source": "src/index.ts",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "cjs": "dist/index.cjs",
-  "mjs": "dist/index.mjs",
-  "types": "dist/index-mjs.d.ts",
-  "targets": {
-    "cjs": {
-      "context": "node",
-      "isLibrary": true,
-      "outputFormat": "commonjs",
-      "source": "src/index-cjs.ts"
-    },
-    "mjs": {
-      "context": "node",
-      "isLibrary": true,
-      "outputFormat": "esmodule",
-      "source": "src/index-mjs.ts"
-    }
-  },
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs",
-      "types": "./dist/index-mjs.d.ts"
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
-    "start": "nodemon --config nodemon.json src/index-mjs.ts",
-    "start:debug": "nodemon --config nodemon.json --inspect-brk src/index-mjs.ts",
+    "start": "nodemon --config nodemon.json src/index.ts",
+    "start:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "build": "tsc src/index-mjs.ts --declaration --emitDeclarationOnly --outDir dist && npx parcel build",
+    "build": "npx parcel build",
     "clean": "node tools/cleanup",
     "package": "npm run build && npm pack",
     "test": "jest --no-cache --runInBand",
