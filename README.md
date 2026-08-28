@@ -4,17 +4,15 @@
 </p>
 <br>
 
-![npm](https://img.shields.io/npm/dw/superbytes) ![npm](https://img.shields.io/npm/v/superbytes) ![NPM](https://img.shields.io/npm/l/superbytes) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/superbytess/superbytes/node.js.yml)
-![GitHub contributors](https://img.shields.io/github/contributors/superbytess/superbytes)
-
-
+[![npm downloads](https://img.shields.io/npm/dw/superbytes)](https://www.npmjs.com/package/superbytes) [![npm version](https://img.shields.io/npm/v/superbytes)](https://www.npmjs.com/package/superbytes) [![license](https://img.shields.io/npm/l/superbytes)](LICENSE) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/superbytess/superbytes/node.js.yml?branch=master)](https://github.com/superbytess/superbytes/actions)
+[![GitHub contributors](https://img.shields.io/github/contributors/superbytess/superbytes)](https://github.com/superbytess/superbytes/graphs/contributors)
 
 ## Description
 Superbytes will help you convert bytes into other units understandable for humans. The library automatically converts bytes and returns a string with the most optimal unit representation. The library also allows you to set the precision of numbers following the decimal point and choose the output metric in the form of either the IEC standard (1024 bytes = 1 kibibyte) or SI (1000 bytes = 1 kilobyte).
 
 By default superbytes converts to IEC units.
 
-The current version supports loading library using both CommonJS and ESModules.
+The current version supports loading library using both CommonJS and ESModules. The library is written in TypeScript, ships with type definitions and has zero dependencies.
 
 ## Installation
 
@@ -59,6 +57,20 @@ superbytes(912839123, { metric: 'si', precision: 5});
 // returns '912.83912 MB'
 ```
 
+## Units
+
+| Metric        | Divider | Units                                                       |
+| ------------- | ------- | ----------------------------------------------------------- |
+| IEC (default) | 1024    | `B`, `KiB`, `MiB`, `GiB`, `TiB`, `PiB`, `EiB`, `ZiB`, `YiB` |
+| SI            | 1000    | `B`, `kB`, `MB`, `GB`, `TB`, `PB`, `EB`, `ZB`, `YB`         |
+
+## Notes
+
+- Negative values are converted as their absolute value, e.g. `superbytes(-423551030)` returns `'403.93 MiB'`.
+- Values smaller than the divider are returned without decimal formatting, e.g. `superbytes(1023)` returns `'1023 B'`.
+- A `TypeError` is thrown for non-finite values (`Infinity`, `NaN`).
+- A `RangeError` is thrown when the value exceeds the largest supported unit (`YiB` / `YB`).
+
 ## License
 
-MIT © Damian Polak
+[MIT](LICENSE) © Damian Polak
