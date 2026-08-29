@@ -8,7 +8,7 @@ import {
   objectArgs,
   Metric,
   Arg,
-} from './types';
+} from './types.js';
 
 abstract class Args {
   protected _arg1!: ArgTypes | ArgObject;

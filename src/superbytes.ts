@@ -1,4 +1,4 @@
-import { ArgDefinition } from './types';
+import { ArgDefinition } from './types.js';
 
 export class Superbytes {
   private _units: string[] = [];

@@ -1,6 +1,6 @@
-import { ArgsFacade } from './args';
-import { Superbytes } from './superbytes';
-import { ArgObject, ArgDefinition } from './types';
+import { ArgsFacade } from './args.js';
+import { Superbytes } from './superbytes.js';
+import { ArgObject, ArgDefinition } from './types.js';
 
 export function superbytes(
   bytes: number,
